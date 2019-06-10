@@ -113,21 +113,7 @@ def print_close_recommend(Closest_recomm):
 
 - If you want more syntax highlighting, format your code like this:
 
-> update and install this package first
-
-```shell
-$ brew update
-$ brew install fvcproductions
-```
-
-> now install npm and bower packages
-
-```shell
-$ npm install
-$ bower install
-```
-
-- For all the possible languages that support syntax highlithing on GitHub (which is basically all of them), refer <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml" target="_blank">here</a>.
+![Recordit GIF](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/webapp.gif)
 
 ---
 
@@ -153,14 +139,27 @@ $ bower install
 
 **Recordit**
 
-![Recordit GIF](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/webapp.gif)
 
 **ttystudio**
 
 ![ttystudio GIF](https://raw.githubusercontent.com/chjj/ttystudio/master/img/example.gif)
 
 
+> update and install this package first
 
+```shell
+$ brew update
+$ brew install fvcproductions
+```
+
+> now install npm and bower packages
+
+```shell
+$ npm install
+$ bower install
+```
+
+- For all the possible languages that support syntax highlithing on GitHub (which is basically all of them), refer <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml" target="_blank">here</a>.
 ---
 
 ## License
