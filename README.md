@@ -15,7 +15,7 @@
 		•
 		<a href="https://bit.ly/2I8fdfK">Slides</a>
 		•
-		<a href="http://platoni.city/">Docker</a>
+		<a href="https://cloud.docker.com/u/alinsi/repository/docker/alinsi/reboo">Docker</a>
 	</strong>
 </p>
 
@@ -57,8 +57,11 @@ Using mapping ideas in the actua ideas of the books, I aim to re-classify ideas 
 ## Docker
 
 - All the `code` required to get started
-- Images of what it should look like
 
+```bash
+xhost +
+sudo docker run -it --rm --net=host --ipc=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unit -v /home/lindsey/Desktop:/root alinsi/reboo
+```
 ---
 ## Example 
 
