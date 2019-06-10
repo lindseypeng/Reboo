@@ -153,7 +153,7 @@ $ bower install
 
 **Recordit**
 
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
+![Recordit GIF](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/webapp.gif)
 
 **ttystudio**
 
