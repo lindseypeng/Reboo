@@ -1,18 +1,30 @@
-# Reboo
+<h1 align="center">
+	<img
+		width="300"
+		alt="The Lounge"
+		src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.0-9/62200292_10157411681371974_7461257159871823872_n.jpg?_nc_cat=107&_nc_ht=scontent-yyz1-1.xx&oh=c76009347bb601ab5d8cdd894ce0467c&oe=5D80E6C7">
+</h1>
 
-<a href="http://platoni.city/"><img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE5NDg0MDU1MTAxMjc3NzEx/plato-9442588-1-402.jpg" title="ReBoo" alt="ReBoo"></a>
-
-<!-- [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) -->
-
-***INSERT GRAPHIC HERE (include hyperlink in image)***
 
 # ReBoo
 
 > ReClassify Ideas For Book Recommendations
 
 ---
+## Overview
 
-## Table of Contents (Optional)
+* **Modern features brought to IRC.** Push notifications, link previews, new message markers, and more bring IRC to the 21st century.
+* **Always connected.** Remains connected to IRC servers while you are offline.
+* **Cross platform.** It doesn't matter what OS you use, it just works wherever Node.js runs.
+* **Responsive interface.** The client works smoothly on every desktop, smartphone and tablet.
+* **Synchronized experience.** Always resume where you left off no matter what device.
+
+To learn more about configuration, usage and features of The Lounge, take a look at [the website](https://thelounge.chat).
+
+The Lounge is the official and community-managed fork of [Shout](https://github.com/erming/shout), by [Mattias Erming](https://github.com/erming).
+---
+
+## Table of Contents 
 
 > If you're `README` has a lot of info, section headers might be nice.
 
