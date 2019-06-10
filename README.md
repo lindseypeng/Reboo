@@ -63,13 +63,41 @@ Using mapping ideas in the actua ideas of the books, I aim to re-classify ideas 
 ## Example 
 
 ```python
-from typing import Iterator
+import pandas as pd
+from bert_emb_modul import mastercode as ms
 
-def fib(n: int) -> Iterator[int]:
-    a, b = 0, 1
-    while a < n:
-        yield a
-        a, b = b, a + b
+description="In this landmark book, Scott Page redefines the way we understand ourselves in relation to one another. \
+The Difference is about how we think in groups--and how our collective wisdom exceeds the sum of its parts. \
+Why can teams of people find better solutions than brilliant individuals working alone? And why are the best group \
+decisions and predictions those that draw upon the very qualities that make each of us unique? The answers lie \
+in diversity--not what we look like outside, but what we look like within, our distinct tools and abilities."
+
+method=0
+
+obj=ms(description,method)
+
+##get recommendation based o n closest neighbors##
+result,avgs,current=obj.master()
+n_neighbors=5
+suggestion=obj.output_neighbors(n_neighbors)
+recommendation=obj.recommend_closest_neighbor(suggestion,result)
+Closest_recomm=obj.clean_rec_close_neighbor(recommendation)
+
+
+def cleanstrings(list1):
+    list2=str(list1).replace('[','').replace(']','')
+    list3=list2.replace('"\'','').replace('\'"','')
+    return list3
+
+##print out recommendation for closest neighbor iterative
+def print_close_recommend(Closest_recomm):
+    for j,row in Closest_recomm.iterrows():
+        booktitle=str(row['booktitle'])
+        booktitle_clean=cleanstrings(booktitle)
+        sentences=str(row['book_sentences'])
+        sentences_clean=cleanstrings(sentences)
+        #print('Title:{} \n {}'.format(booktitle_clean,sentences_clean))
+
 ```
 
 ---
