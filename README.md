@@ -24,14 +24,14 @@
 
 Book market is billion dollar business A problem is that growth rate of book published is much faster than growth rate of sales. This phenomenon has led to millions of dollars poured into competing for people's attentions, which is why a smart automated intelligent recommendation system can acts as a filter, delivers the right content to the right people. However current recommendation is limited with two main problem:
 
--echo chamber, users find book too boring 
--seemingly similar genre but completely irrelevant for users
+- echo chamber, users find book too boring 
+- seemingly similar genre but completely irrelevant for users
 
 ## Solution
 Using mapping ideas in the actua ideas of the books, I aim to re-classify ideas in a different vector space and brings books that might seem different but actually similar together. Using Natural language modelling, books that were never exposed can be recommended to users with explanations. The long term goal is to 
 
--reduce $ sunk cost of content creation
--reduce cost of zero sum game of competition.
+- reduce $ sunk cost of content creation
+- reduce cost of zero sum game of competition.
 
 ## Overview
 
@@ -62,28 +62,36 @@ Using mapping ideas in the actua ideas of the books, I aim to re-classify ideas 
 ---
 ## Example 
 
+> import pandas and the main script bert_emb_module, which are included in docker container
 ```python
 import pandas as pd
 from bert_emb_modul import mastercode as ms
-
+```
+> copy paste a book description of your choice
+```python
 description="In this landmark book, Scott Page redefines the way we understand ourselves in relation to one another. \
 The Difference is about how we think in groups--and how our collective wisdom exceeds the sum of its parts. \
 Why can teams of people find better solutions than brilliant individuals working alone? And why are the best group \
 decisions and predictions those that draw upon the very qualities that make each of us unique? The answers lie \
 in diversity--not what we look like outside, but what we look like within, our distinct tools and abilities."
-
+```
+> method 0 is without tfidf and method 1 is with tfidf. Initalize our instance with the description and method
+```python
 method=0
-
 obj=ms(description,method)
-
+```
+> get a list of recommendation in Panda frames using the closest neighbor method. See Cluster method in document.
+> choose how many neighbors you want to see in n_neighbors
+```python
 ##get recommendation based o n closest neighbors##
 result,avgs,current=obj.master()
 n_neighbors=5
 suggestion=obj.output_neighbors(n_neighbors)
 recommendation=obj.recommend_closest_neighbor(suggestion,result)
 Closest_recomm=obj.clean_rec_close_neighbor(recommendation)
-
-
+```
+> from the list of recommendation print out the booktitle and associated sentence that was the closest neighbors
+```python
 def cleanstrings(list1):
     list2=str(list1).replace('[','').replace(']','')
     list3=list2.replace('"\'','').replace('\'"','')
