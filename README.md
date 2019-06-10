@@ -5,40 +5,52 @@
 		src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.0-9/62200292_10157411681371974_7461257159871823872_n.jpg?_nc_cat=107&_nc_ht=scontent-yyz1-1.xx&oh=c76009347bb601ab5d8cdd894ce0467c&oe=5D80E6C7">
 </h1>
 
+<h3 align="center">
+	ReClassify Ideas For Book Recommendations
+</h3>
 
-# ReBoo
-
-> ReClassify Ideas For Book Recommendations
-
+<p align="center">
+	<strong>
+		<a href="http://platoni.city/">Website</a>
+		•
+		<a href="http://platoni.city/">Slides</a>
+		•
+		<a href="http://platoni.city/">Docker</a>
+	</strong>
+</p>
 ---
+## Problem Statement
+
+Book market is billion dollar business A problem is that growth rate of book published is much faster than growth rate of sales. This phenomenon has led to millions of dollars poured into competing for people's attentions, which is why a smart automated intelligent recommendation system can acts as a filter, delivers the right content to the right people. However current recommendation is limited with two main problem:
+
+-echo chamber, users find book too boring 
+-seemingly similar genre but completely irrelevant for users
+
+## Solution
+Using mapping ideas in the actua ideas of the books, I aim to re-classify ideas in a different vector space and brings books that might seem different but actually similar together. Using Natural language modelling, books that were never exposed can be recommended to users with explanations. The long term goal is to 
+
+-reduce $ sunk cost of content creation
+-reduce cost of zero sum game of competition.
+
 ## Overview
 
-* **Modern features brought to IRC.** Push notifications, link previews, new message markers, and more bring IRC to the 21st century.
-* **Always connected.** Remains connected to IRC servers while you are offline.
-* **Cross platform.** It doesn't matter what OS you use, it just works wherever Node.js runs.
-* **Responsive interface.** The client works smoothly on every desktop, smartphone and tablet.
-* **Synchronized experience.** Always resume where you left off no matter what device.
+* **Base Case.** Recommendation from nearest neighbor of a 2D representation of your book description. Description vector was reduced with t-sNE(dim=2) from Bert-embeddings(dim=768). 
+* **MultiLabel Classification** Each book description is embedded in a dim=6 vector corresponding to genres. 
+* **Web App** Book recommendations based on the description of your book. It tells you why the book was recommended by giving you the nearest neighbor in 2D t-sNE representation.
+* **Docker** Test the scripts anywhere you are without worrying about dependencies. 
 
-To learn more about configuration, usage and features of The Lounge, take a look at [the website](https://thelounge.chat).
+-For more information, visit slide deck:  
 
-The Lounge is the official and community-managed fork of [Shout](https://github.com/erming/shout), by [Mattias Erming](https://github.com/erming).
 ---
 
 ## Table of Contents 
 
-> If you're `README` has a lot of info, section headers might be nice.
 
 - [Docker](#docker)
 - [Example](#example)
 - [Web_App](#web_app)
 - [Slides](#slides)
 - [License](#license)
-
----
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Dependency Status](http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg?style=flat-square)](https://gemnasium.com/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger) [![Code Climate](http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg?style=flat-square)](https://codeclimate.com/github/badges/badgerbadgerbadger) [![Github Issues](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/issues.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/issues) [![Pending Pull-Requests](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/pulls.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/pulls) [![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square)](https://rubygems.org/gems/badgerbadgerbadger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
-
-- For more on these wonderful ~~badgers~~ badges, refer to <a href="http://badges.github.io/badgerbadgerbadger/" target="_blank">`badgerbadgerbadger`</a>.
----
 
 
 ## Docker
