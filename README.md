@@ -19,19 +19,34 @@
 	</strong>
 </p>
 
+## Table of Contents 
 
-## Problem Statement
+---
+- [Motivation](#pipeline) 
+- [Pipeline](#pipeline)
+- [Docker](#docker)
+- [Example](#example)
+- [Web_App](#web_app)
+- [License](#license)
+---
 
-Book market is billion dollar business A problem is that growth rate of book published is much faster than growth rate of sales. This phenomenon has led to millions of dollars poured into competing for people's attentions, which is why a smart automated intelligent recommendation system can acts as a filter, delivers the right content to the right people. However current recommendation is limited with two main problem:
+## Motivation
+
+Book market is billion dollar business. A problem is that growth rate of book published is much faster than growth rate of sales. This phenomenon has led to millions of dollars poured into competing for people's attentions, which is why a smart automated intelligent recommendation system can acts as a filter, delivers the right content to the right people. 
+
+However current recommendation is limited with two main problem:
 
 - echo chamber, users find book too boring 
 - seemingly similar genre but completely irrelevant for users
 
 ## Solution
-Using mapping ideas in the actua ideas of the books, I aim to re-classify ideas in a different vector space and brings books that might seem different but actually similar together. Using Natural language modelling, books that were never exposed can be recommended to users with explanations. The long term goal is to 
+By mapping ideas in the actual ideas of the books, I have re-classified ideas in a different vector space and brings books that might seem different but actually similar together. Using Natural language modelling, I can provide users explanations why the books were recommended from my database. 
 
-- reduce $ sunk cost of content creation
-- reduce cost of zero sum game of competition.
+## Pipeline
+The challenge is how to topic remodel when you don't know whats the new topic/genre you want to fine tune your model on?
+I estimated this new/true label with a inter-genre vector : a book can be simultaneously up to six different genres. The new label provides new cluster and hence new recommendations. 
+
+[![INSERT YOUR GRAPHIC HERE](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/reboopipeline.png)]()
 
 ## Overview
 
@@ -40,18 +55,7 @@ Using mapping ideas in the actua ideas of the books, I aim to re-classify ideas 
 * **Web App** Book recommendations based on the description of your book. It tells you why the book was recommended by giving you the nearest neighbor in 2D t-sNE representation.
 * **Docker** Test the scripts anywhere you are without worrying about dependencies. 
 
--For more information, visit slide deck:  
-
 ---
-
-## Table of Contents 
-
-
-- [Docker](#docker)
-- [Example](#example)
-- [Web_App](#web_app)
-- [PipeLine](#pipeline)
-- [License](#license)
 
 
 ## Docker
@@ -123,10 +127,10 @@ def print_close_recommend(Closest_recomm):
 - Data are stored in Datasets folder
 
 ---
-## PipeLine
 
 
-[![INSERT YOUR GRAPHIC HERE](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/reboopipeline.png)]()
+
+
 
 
 ## License
