@@ -26,7 +26,7 @@
 - [Pipeline](#pipeline)
 - [Docker](#docker)
 - [Example](#example)
-- [Web App Demo](#web app demo)
+- [Demo](#demo)
 - [License](#license)
 ---
 
@@ -115,7 +115,7 @@ def print_close_recommend(Closest_recomm):
 ```
 
 ---
-### Web App Demo
+### Demo
 
 
 ![Recordit GIF](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/webapp.gif)
