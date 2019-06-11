@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue May 28 15:05:54 2019
+
+@author: lindsey
+"""
+
+import pandas as pd
+import numpy as np
+from itertools import groupby
+folder="/home/lindsey/insightproject/"
+inputraw=pd.read_csv(folder+"bookdescription_Ascentofmoney.csv")
+data_list=[]
+for i in np.arange(len(inputraw)):
+    b=inputraw.iloc[i]
+    c=b['Genres']
+    clean=("".join([x for x in c if x is not "'"]))
+    clean2=clean.replace(" ", "")##iterating every character and joined by no space except for quotation mark
+    dd=clean2.split("[")[1]#remove the brackets
+    dd2=dd.split("]")[0]#remove the brackets
+    my_list=dd2.split(",")#for every item separated by, is converted to item in list
+    data_list.append(my_list)
+
+flattened_list = [y for x in data_list for y in x]   ##flatten list of list to a single list
+
+flattened_list_set=set(flattened_list)##convert list to a set
+
+seen=set()
+result=[]
+
+for item in flattened_list_set:
+    if item not in seen:
+        seen.add(item)
+        result.append(item)
+
+
+flattened_list_frequency=[]
+for i in result:
+    frequency=flattened_list.count(i)
+    flattened_list_frequency.append(frequency)
+
+frequencylist=pd.DataFrame()
+frequencylist['uniquegenre']=result
+frequencylist['frequency']=flattened_list_frequency
+frequencylist=frequencylist.sort_values(by=['frequency'],ascending=False)
+frequencylist.reset_index()
+
+##check what genres you want
+FINAL_GENRES=[]
+FINAL_GENRES=frequencylist[0:4]
+FINAL_GENRES=FINAL_GENRES.append(frequencylist[6:11])
+FINAL_GENRES=list(FINAL_GENRES['uniquegenre'])
+GEN=FINAL_GENRES
+
+
+summary=pd.DataFrame({'Book#':[],'Book_Title':[],'Description':[],
+                                GEN[0]:[],GEN[1]:[],GEN[2]:[],GEN[3]:[],
+                                GEN[4]:[],GEN[5]:[],GEN[6]:[],GEN[7]:[],
+                                GEN[8]:[]})
+#
+for i in np.arange(len(inputraw)):
+    temp=pd.DataFrame()
+    b=inputraw.iloc[i]
+    c=b['Genres']                 
+    clean=("".join([x for x in c if x is not "'"]))
+    clean2=clean.replace(" ", "")##iterating every character and joined by no space except for quotation mark
+    dd=clean2.split("[")[1]#remove the brackets
+    dd2=dd.split("]")[0]#remove the brackets
+    my_list=dd2.split(",")
+    checkthis=set(my_list)##ir ordering a problem?
+    vectorlist={}
+    for item in set(FINAL_GENRES):##set changes the order, either concatenante pandas matching columns or set ordershere
+        if item not in checkthis:
+            tempdict={item:[0]}
+            vectorlist.update(tempdict)
+        else:
+            tempdict={item:[1]}
+            vectorlist.update(tempdict)
+    temporary=pd.DataFrame({'Book#':[str(b['Book#'])],'Book_Title':[str(b['Book_Title'])],'Description':[str(b['Description'])]})
+    temporary=temporary.join(pd.DataFrame(vectorlist,index=temporary.index))
+    summary=pd.concat([temporary,summary], axis=0, ignore_index=True,sort=True)
+#summary.to_csv(folder+'trainbooksummary.csv')
