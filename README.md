@@ -50,14 +50,13 @@ Using mapping ideas in the actua ideas of the books, I aim to re-classify ideas 
 - [Docker](#docker)
 - [Example](#example)
 - [Web_App](#web_app)
-- [Slides](#slides)
+- [PipeLine](#pipeline)
 - [License](#license)
 
 
 ## Docker
 
-- All the `code` required to get started
-
+- download and run docker container with all the neccessary dependencies for this repo
 ```bash
 xhost +
 sudo docker run -it --rm --net=host --ipc=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unit -v /home/lindsey/Desktop:/root alinsi/reboo
@@ -119,15 +118,14 @@ def print_close_recommend(Closest_recomm):
 ![Recordit GIF](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/webapp.gif)
 
 ---
+## DataSets
 
-## Slides
 
-***INSERT ANOTHER GRAPHIC HERE***
+---
+## PipeLine
+
 
 [![INSERT YOUR GRAPHIC HERE](http://i.imgur.com/dt8AUb6.png)]()
-
-- Most people will glance at your `README`, *maybe* star it, and leave
-- Ergo, people should understand instantly what your project is about based on your repo
 
 
 ## License
