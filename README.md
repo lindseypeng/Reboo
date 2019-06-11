@@ -26,7 +26,7 @@
 - [Pipeline](#pipeline)
 - [Docker](#docker)
 - [Example](#example)
-- [Web_App](#web_app)
+- [Web App Demo](#web_app)
 - [License](#license)
 ---
 
@@ -115,9 +115,8 @@ def print_close_recommend(Closest_recomm):
 ```
 
 ---
-### Web_App
+### Web App Demo
 
-- If you want more syntax highlighting, format your code like this:
 
 ![Recordit GIF](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/webapp.gif)
 
