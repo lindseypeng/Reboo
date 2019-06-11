@@ -126,7 +126,7 @@ def print_close_recommend(Closest_recomm):
 ## PipeLine
 
 
-[![INSERT YOUR GRAPHIC HERE](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/pipelinereboo.png)]()
+[![INSERT YOUR GRAPHIC HERE](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/reboopipeline.png)]()
 
 
 ## License
