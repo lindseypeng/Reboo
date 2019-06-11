@@ -32,8 +32,8 @@ class mastercode:
     def __init__(self,description,methods):
         self.description=description
         self.methods=methods
-        self.tfidf="/home/lindsey/insightproject/tfidfweights.csv"
-        self.database="/home/lindsey/insightproject/weighted43witharray.pkl"
+        self.tfidf="./tfidfweights.csv"
+        self.database="./weighted43witharray.pkl"
         self.m=768
 ###bert embedding parag
     def pa_to_sen(self):
