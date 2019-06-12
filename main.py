@@ -291,54 +291,7 @@ class mastercode:
                 self.FinalSuggestions.remove(b)
         return self.FinalSuggestions
             
-#    def recommend_closest_nei(self,suggestions,result):
-#        self.suggestions=suggestions#retreat suggestions from output neigh
-#        self.result=result#run main for result
-#        self.suggestions=np.unique(suggestions.flatten())
-#        self.sort_byno=pd.DataFrame() 
-#        for i in suggestions:##map index to book number
-#            self.row=self.result.loc[self.result.index==i]
-#            self.bookno=int(self.row['book#'])
-#            self.current=pd.DataFrame( {'book#':self.bookno,'index':i},index=[str(i)])
-#            self.sort_byno=self.sort_byno.append(self.current,ignore_index=True)
-#        self.unique=np.unique(np.array(self.sort_byno['book#']))
-#        self.recommendation=pd.DataFrame()
-#        for k in self.unique:
-#            self.sentence_concat=self.result.loc[self.result['book#']==k]
-#            if self.sentence_concat.index in self.suggestions:
-#                
-#            self.sentences=self.sentence_concat['sentence']
-#            self.booktitle=np.unique(np.array(self.result.loc[self.result['booktitle']==k]))
-#            self.strings=""
-#            for j in self.sentences:
-#                self.strings=self.strings+str(j)
-#            self.temp=pd.DataFramee( {'bookno':k,'book_sentences':self.strings,'booktitles':self.booktitle},index=[str(j)])
-#            self.recommendation=self.recommendation.append(self.temp,ignore_index=True)
-#        return self.recommendation
-            
-            
-#        self.yoursentence=[]
-##        self.returnsentences=[]
-#        for i in np.arange(len(self.Suggestions)):
-#            self.Neighbors=self.Suggestions[i]ore
-#            self.row=self.avgs.loc[self.avgs.index==i]
-#            self.sen1=list(self.row['sentence'].values)
-#            self.yoursen=str('your sentence \
-#                             : {}'.format(" ".join(str(x) for x in self.sen1)))
-#            self.yoursentence.append(self.yoursen)
-#            for j in self.Neighbors:
-#                self.frame=self.result.loc[self.result.index==j]
-#                self.bookname=list(self.frame['booktitle'].values)
-#                self.sennum=list(self.frame['index'].values)
-#                self.sen2=list(self.frame['sentence'].values)
-#                self.returnsen=str('Closest Neightbor{}:{} sentence\
-#                                   : {}'.format(self.sennum,\
-#                                   " ".join(str(x) for x in self.bookname),\
-#                                   " ".join(str(x) for x in self.sen2)))
-#                self.yoursentence.append(self.returnsen)
-#        
-#        return self.yoursentence#,self.returnsentences                                                                   
-        
+
         
 
 ##print out neighboring result
