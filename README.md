@@ -41,7 +41,8 @@ However current recommendation is limited:
 
 ## Solution
 By mapping ideas in the actual ideas of the books, Reboo makes conten-based book recommendation system using natural language processing. Book which might seem uncorrelated are actually related if you parse through the contents.  In addition, Reboo can provide users explanations(see more explanation in pipeline) why the books were recommended from the database. 
-[![INSERT YOUR GRAPHIC HERE](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/Reboomotivation.png)]()
+
+[![INSERT YOUR GRAPHIC HERE](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/rb2.png)]()
 
 ## Pipeline
 The naive approach is to translate english description of books into vector representations using word embedding, reducing the vector to 2D plot and using closest neighbor in 2D plot to make recommendation.
