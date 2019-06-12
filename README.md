@@ -26,8 +26,10 @@
 - [Solution](#solution) 
 - [Pipeline](#pipeline)
 - [Docker](#docker)
-- [Example](#example)
 - [Demo](#demo)
+- [Example](#example)
+- [Dataset](#example)
+
 ---
 
 ## Motivation
@@ -85,6 +87,11 @@ xhost +
 sudo docker run -it --rm --net=host --ipc=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unit -v /home/lindsey/Desktop:/root alinsi/reboo
 ```
 ---
+### Demo
+
+
+![GIF](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/webapp.gif)
+---
 ## Example 
 
 > import pandas and the main script bert_emb_module, which are included in docker container
@@ -134,15 +141,10 @@ def print_close_recommend(Closest_recomm):
 ```
 
 ---
-### Demo
-
-
-![Recordit GIF](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/webapp.gif)
-
----
 ## DataSets
 - Data is scrapped from GoodReads.com book descriptions.
-- Data are stored in Datasets folder
+- Data are stored in Datasets folder. There is a file containing url to individual books in Reboo's database
+- Beautifulsoup is used to scrap book description and genres from the urls.
 
 ---
 
