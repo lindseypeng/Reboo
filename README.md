@@ -57,7 +57,7 @@ Reboo approximate a new genre by creating a new inter-genre vector that represen
 
 <h1 align="center">
 	<img
-		src="https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/reboopipeline.png">
+		src="https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/pipeline.png">
 </h1>
 
 ## Overview
