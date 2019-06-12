@@ -55,7 +55,10 @@ However, to scale it up, we need a way to finetune and train the model to target
 
 Reboo approximate a new genre by creating a new inter-genre vector that represents a vector of different genres tagged by readers. Currently, a book can be simultaneously up to six different genres. Reboo  train a deep RNN(BERT) to classify book description into a multilabel genres and the vector is further reduced into 2D plot and new clusters are estimated to be the new genres. This process requires further iterations and more data. 
 
-[![INSERT YOUR GRAPHIC HERE](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/reboopipeline.png)]()
+<h1 align="center">
+	<img
+		src="https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/reboopipeline.png">
+</h1>
 
 ## Overview
 
