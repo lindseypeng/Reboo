@@ -22,7 +22,7 @@
 ## Table of Contents 
 
 ---
-- [Motivation](#pipeline) 
+- [Motivation](#motivation) 
 - [Pipeline](#pipeline)
 - [Docker](#docker)
 - [Example](#example)
@@ -32,37 +32,47 @@
 
 ## Motivation
 
-Book market is billion dollar business. A problem is that growth rate of book published is much faster than growth rate of sales. This phenomenon has led to millions of dollars poured into competing for people's attentions, which is why a smart automated intelligent recommendation system can acts as a filter, delivers the right content to the right people. 
+Book market is billion dollar business. A problem is that growth rate book publishing is much faster than growth rate of sales. This phenomenon has led to millions of dollars poured into competing for people's attentions, which is why a smart automated intelligent recommendation system is important in delivering the right content to the right people. 
 
-However current recommendation is limited with two main problem:
+However current recommendation is limited:
 
-- echo chamber, users find book too boring 
+- echo chamber, users find book that are too similar too boring 
 - seemingly similar genre but completely irrelevant for users
 
 ## Solution
-By mapping ideas in the actual ideas of the books, I have re-classified ideas in a different vector space and brings books that might seem different but actually similar together. Using Natural language modelling, I can provide users explanations why the books were recommended from my database. 
+By mapping ideas in the actual ideas of the books, Reboo makes conten-based book recommendation system using natural language processing. Book which might seem uncorrelated are actually related if you parse through the contents.  In addition, Reboo can provide users explanations(see more explanation in pipeline) why the books were recommended from the database. 
 
 ## Pipeline
-The challenge is how to topic remodel when you don't know whats the new topic/genre you want to fine tune your model on?
-I estimated this new/true label with a inter-genre vector : a book can be simultaneously up to six different genres. The new label provides new cluster and hence new recommendations. 
+The naive approach is to translate english description of books into vector representations using word embedding, reducing the vector to 2D plot and using closest neighbor in 2D plot to make recommendation.
+
+However, to scale it up, we need a way to finetune and train the model to target books into specific clusters. This require us to train the model to crate new-genres when we don't know whats the new topic connecting ideas without having someone going through each single book.
+
+Reboo approximate a new genre by creating a new inter-genre vector that represents a vector of different genres tagged by readers. Currently, a book can be simultaneously up to six different genres. Reboo  train a deep RNN(BERT) to classify book description into a multilabel genres and the vector is further reduced into 2D plot and new clusters are estimated to be the new genres. This process requires further iterations and more data. 
 
 [![INSERT YOUR GRAPHIC HERE](https://raw.githubusercontent.com/lindseypeng/Reboo/master/pics/reboopipeline.png)]()
 
 ## Overview
 
-* **Base Case.** Recommendation from nearest neighbor of a 2D representation of your book description. Description vector was reduced with t-sNE(dim=2) from Bert-embeddings(dim=768). 
-* **MultiLabel Classification** Each book description is embedded in a dim=6 vector corresponding to genres. 
-* **Web App** Book recommendations based on the description of your book. It tells you why the book was recommended by giving you the nearest neighbor in 2D t-sNE representation.
-* **Docker** Test the scripts anywhere you are without worrying about dependencies. 
+* **Base Case.** Content-Based recommendation using word embedding and closest neighbor. Section in example show how to access this functionality. The input is book description and output is a list of book title and the sentence that was mapped together with your description. You can change how many neighbors (Recommendations) you want. 
+* **MultiLabel Classification** Each book description is embedded in a dim=6 vector corresponding to genres. The input is 
+book description and the output is a vector of 6 for each sentence of your book. The script is in the file MULTI-LABEL-CLASSIFICATIONBERT.ipynb. You can modify the script to process entire book description instead of separate sentences.
+* **Web App** Book recommendations based on the description of your book. The backbone currently runs on the Base Case. A demo of this web app is shown in gif in demo section.
+* **Docker** A machine learning container including other packages required to run Reboo Scripts. 
 
 ---
 
 
 ## Docker
 
-- download and run docker container with all the neccessary dependencies for this repo
+- download and run docker container with all the neccessary dependencies for this repo.
+- tags are added to access visualization on local computer.
+- tags are added to remove the container after existing.
+- when you call the command you are taken into the bash terminal of the container. 
+
 ```bash
 xhost +
+```
+```bash
 sudo docker run -it --rm --net=host --ipc=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unit -v /home/lindsey/Desktop:/root alinsi/reboo
 ```
 ---
