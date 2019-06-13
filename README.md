@@ -140,7 +140,22 @@ def print_close_recommend(Closest_recomm):
         #print('Title:{} \n {}'.format(booktitle_clean,sentences_clean))
 
 ```
-
+>build recommendation based on Guassian Mixture Clustering(GMM)
+>give number of cluster as part of the parameter
+```python
+numberofclusters=20
+result_labels,current=obj.gmm_cluster(n_components=numberofclusters)
+similarbooks=obj.cluster_neighbor(result_labels,current)
+booktitles,recommend=obj.recommend_cluster_nei(similarbooks)
+```
+>clean and print booktitle and sentences of recommendation based on GMM
+```python
+def print_cluster_recommend(recommend):
+    for j,row in recommend.iterrows():
+        booktitle=str(row['booktitles'])
+        sentences=str(row['book_sentences'])
+print('Title:{} \n {}'.format(cleanstrings(booktitle),cleanstrings(sentences)))
+```
 ---
 ## DataSets
 - Data is scrapped from GoodReads.com book descriptions.
