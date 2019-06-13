@@ -29,6 +29,7 @@
 - [Demo](#demo)
 - [Example](#example)
 - [Dataset](#example)
+- [Acknowledgement](#acknowledgement)
 
 ---
 
@@ -147,7 +148,11 @@ def print_close_recommend(Closest_recomm):
 - Beautifulsoup is used to scrap book description and genres from the urls.
 
 ---
-
+## Acknowledgement
+- https://github.com/google-research/bert
+- https://github.com/imgarylai/bert-embedding
+- https://github.com/javaidnabi31/Multi-Label-Text-classification-Using-BERT
+- Insight DataScience and AI Fellowship
 
 
 
