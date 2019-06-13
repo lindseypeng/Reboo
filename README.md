@@ -11,7 +11,7 @@
 
 <p align="center">
 	<strong>
-		<a href="http://platoni.city/">Website</a>
+		<a href="http://18.218.46.78:5000/">Website</a>
 		•
 		<a href="https://bit.ly/2I8fdfK">Slides</a>
 		•
